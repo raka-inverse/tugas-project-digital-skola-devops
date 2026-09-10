@@ -1,13 +1,15 @@
 const { FlatCompat } = require('@eslint/eslintrc');
 const js = require('@eslint/js');
 
-// Initialize with the necessary configurations
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
   eslintrc: true
 });
 
 module.exports = [
+  {
+    ignores: ["loadtest/**"]
+  },
   js.configs.recommended,
   ...compat.config({
     env: { 
